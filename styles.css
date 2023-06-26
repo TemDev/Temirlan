@@ -1,0 +1,117 @@
+@font-face {
+    font-family: "Beamont";
+    src: url("./Beamont.ttf") format("truetype");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+
+.notLinks {
+    text-decoration: none;
+    color: white;
+    min-width: 500px;
+    
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: black;
+    color: #fff;
+    height: 100%;
+    margin: 0px;
+    padding-left: 5%;
+    padding-right: 5%;
+    position: fixed;
+    top: 0;
+    height: 40px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+#nav li {
+    display: inline;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+}
+
+#background1 {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+}
+
+#image {
+    margin-top: 5%;
+    width: 330px;
+    border-style: solid;
+    float: left;
+
+}
+
+#mainText {
+    color: white;
+}
+
+.inCenter {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.justBelow {
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.imgDivs {
+    position: relative;
+    padding: 0%;
+    margin: 0%;
+    background-color: white;
+}
+
+.box {
+    opacity: 0.8;
+}
+
+#secondSection {
+    background-color:white;
+    padding-top: 100px;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin: 0%;
+    height: 900px;
+
+}
+
+#aboutMe {
+    font-size: 36px;
+}
+
+#extract {
+    padding-left: 30%;
+    padding-top: 15%;
+    font-size: 40px;
+}
