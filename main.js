@@ -1,14 +1,17 @@
+
 const mainText = document.getElementById("mainText");
-mainText.addEventListener("mouseover", becomeBigger);
-mainText.addEventListener("mouseout", becomeNormal);
 const sizeFont = parseFloat(getComputedStyle(mainText).fontSize);
 let x = sizeFont;
 let intervalID;
 let intervalID2;
-let txt = "Originally from Kazakhstan, I have studied in the UK for the past 6 years. I have been coding since before I even moved to this amazing country. For my skillset see below in the skills section. Other than studies, on a daily basis I workout keeping myself healthy and from time to time even go for jogs. Find me on strava :)";
-var speed = 50;
+let intervalID3;
+let txt = "Coming from Kazakhstan, I have studied in the UK for the past 6 years. My home city is Almaty and my interests range from purely academical ones to sports such as basketball and running. I love going for walks, watching plays (Hamilton is number 1) and travelling.";
+const skillArray = ["Python, 4 years, made games, implemented machine learning algorithms, completed A-Level", "Haskell, functional programmming", "Kotlin, Java, object-oriented programming", "C, achieved 93% on Imperial assessment and made a group project", "HTML, CSS and Javascript made this website as an example"];
+const skArray = ["sk1", "sk2", "sk3", "sk4", "sk5"]
+var speed = 20;
+var speed2 = 200;
 let i = 0;
-
+let i2 = 0;
 
 function becomeBigger() {
     intervalID = setInterval(becomeBiggerhelper, 10);
@@ -26,7 +29,7 @@ function becomeBiggerhelper() {
         clearInterval(intervalID);
     }
 }
-
+let count = 0;
 
 function becomeNormalHelper() {
     clearInterval(intervalID);
@@ -38,7 +41,14 @@ function becomeNormalHelper() {
     }
 }
 
-intervalID3 = setInterval(typeWriter, speed);
+function startIntervalWriter(entries, observer) {
+    if (count) {
+        observer.unobserve(target);
+        intervalID3 = setInterval(typeWriter, speed);
+    } else {
+        count++;
+    }
+}
 
 function typeWriter() {
     if (i < txt.length) {
@@ -48,3 +58,58 @@ function typeWriter() {
         clearInterval(intervalID3);
     }
 }
+
+const options = {
+  root: null,
+  threshold: 1
+};
+
+function main() {
+  mainText.addEventListener("mouseover", becomeBigger);
+  mainText.addEventListener("mouseout", becomeNormal);
+
+}
+
+main();
+const observer = new IntersectionObserver(startIntervalWriter, options);
+
+const target = document.getElementById("extract");
+observer.observe(target);
+
+// jQuery code copied from stackoverflow for smooth scrolling
+// Select all links with hashes
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });

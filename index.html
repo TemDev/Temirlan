@@ -3,24 +3,36 @@
 <head>
 <title>Profile</title>
 <link rel="stylesheet" href="styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 </head>
 <body>
-    <ul class="dropdown">
+    <ul class="dropdown" id="navbar">
         <li><a href="#aboutMe" class="notLinks">About me</a></li>
-        <li><a href="/" class="notLinks">Experience</a></li>
-        <li><a href="/" class="notLinks">Little Game</a></li>
-        <li><a href="/" class="notLinks">Dropdown 3</a></li>
-        <li><a href="/" class="notLinks">Dropdown 4</a></li>
+        <li><a href="#experience" class="notLinks">Experience</a></li>
+        <li><a href="#" class="notLinks">Little Game</a></li>
+        <li><a href="#" class="notLinks">Dropdown 3</a></li>
+        <li><a href="./runs.html" class="notLinks">Links</a></li>
     </ul><div class="imgDivs">
     <img src="./Hotpot copy.png" alt="Mountainous landscape" id="background1">
     <div class="box">
         <h1 class="inCenter" id="mainText">Temirlan Sergazin</h1>
-        <p class="justBelow">A Computing, first-year undergrdaute student at Imperial College London</p>
+        <p class="justBelow">A Computing, first-year undergraduate student at Imperial College London</p>
     </div>
 </div><div id="secondSection">
-    <h2 id="aboutMe"> About me </h2>
+    <h2 class="sectionHeader" id="aboutMe">About me</h2>
     <img src="IMG_5623_cleanup.jpg" alt="Tem" id="image">
     <p id="extract"></p>
+</div><div id="thirdSection">
+    <h2 class="sectionHeader" id="experience">Programming skills</h2>
+    <ul>
+        <li class="skills" id="sk1">Python, 4 years, made games, implemented machine learning algorithms, completed A-Level</li>
+        <li class="skills" id="sk2">Haskell, functional programmming</li>
+        <li class="skills" id="sk3">Kotlin, Java, object-oriented programming</li>
+        <li class="skills" id="sk4">C, achieved 93% on Imperial assessment and made a group project</li>
+        <li class="skills" id="sk5">HTML, CSS and Javascript made this website as an example</li>
+    </ul>
+</div><div id="fourthSection">
+    <h2 class="sectionHeader"></h2>
 </div>
 
 </body>
